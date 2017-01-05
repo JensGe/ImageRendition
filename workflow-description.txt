@@ -1,0 +1,30 @@
+Ablauf RAW Workflow:
+
+manuell:
+- SD Karte einstecken
+
+automatisch:
+* kopiere Ordner in den entsprechenden Jahresordner (if not exists)
+	* z.B. I:\DCIM\100_3112 (mit Änderungsdatum 31.12.2016) nach F:\_FOTOGRAFIE\__K-1_Archiv\2016
+	* z.B. I:\DCIM\101_0101 (mit Änderungsdatum 01.01.2017) nach F:\_FOTOGRAFIE\__K-1_Archiv\2017
+	* vor jedem Kopieren Größe des jeweiligen Ordner checken und mit Platz auf F: vergleichen
+		* Meldung wenn kein Platz
+
+manuell:
+- Ordnerbilder in Camera Raw öffnen
+	- Ungewünschte Bilder löschen
+	- Gewünschte Bilder bearbeiten
+	- Schließen (Camera Raw löschen lassen)
+- Ordnerbilder in Camera Raw öfnnen
+	- Alle Bilder im selben Ordner als JPG speichern (volle Pixel, volle Qualität)
+
+automatisch (für Alle Ordner, die altes Namensschema besitzen und DNG+JPGs enthalten:
+- Ordner anlegen
+	- RAW
+	- JPQ-HQ
+- DNG-Dateien nach RAW verschieben
+- JPG-Dateien nach JPG-HQ verschieben
+- JPG-Dateien umgewandelt in Root hoch kopieren (z.B. 2000x3000px)
+- JPGs in Root in Zipfile packen
+
+- Root Ordner und Zipfile benennen (Prompt)
