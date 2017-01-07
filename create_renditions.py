@@ -1,9 +1,9 @@
-# -*- coding: utf-8 -*-
+import os, configparser
 
-import os
+
 
 def checkwhichfolder():
-    archive_path = os.path.abspath("F:\\_FOTOGRAFIE\\__K-1_Archiv")
+    archive_path = os.path.abspath(config.get("Foldersettings", "archivepath"))
     print archive_path
     renditionfolders = []
     for yearfolder in os.listdir(archive_path):
@@ -18,4 +18,12 @@ def checkwhichfolder():
                 print folder + ": " + str(fileextensions)
 
 
+def readconfig():
+    config = configparser.ConfigParser()
+    config.read_file(open('config.cfg'))
+
+
+readconfig()
 checkwhichfolder()
+
+
