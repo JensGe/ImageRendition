@@ -1,12 +1,12 @@
-import os, time, shutil, psutil, subprocess
+import os, time, shutil, psutil, subprocess, configparser
 
 import win32com.client as com
 
 
 def copy_sd2hd():
     MB = 1024 * 1024.0
-    camera_path = os.path.abspath("I:\\DCIM")
-    archive_path = os.path.abspath("F:\\_FOTOGRAFIE\\__K-1_Archiv")
+    camera_path = os.path.abspath(config.get("Foldersettings", "camerapath"))
+    archive_path = os.path.abspath(config.get("Foldersettings", "archivepath"))
 
     for folder in os.listdir(camera_path):
         src_path = os.path.abspath(camera_path + "\\" + folder)
@@ -33,3 +33,7 @@ def copy_sd2hd():
 
         print "---------------------------"
         print " "
+
+config = configparser.ConfigParser()
+config.read_file(open('config.cfg'))
+copy_sd2hd()
