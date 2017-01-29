@@ -2,6 +2,7 @@ Ablauf RAW Workflow:
 
 manuell:
 - SD Karte einstecken
+- ImageRendition Programm starten
 
 automatisch:
 * kopiere Ordner in den entsprechenden Jahresordner (if not exists)
@@ -19,12 +20,19 @@ manuell:
 	- Alle Bilder im selben Ordner als JPG speichern (volle Pixel, volle Qualität)
 
 automatisch (für Alle Ordner, die altes Namensschema besitzen und DNG+JPGs enthalten:
-- Ordner anlegen
-	- RAW
-	- JPQ-HQ
-- DNG-Dateien nach RAW verschieben
-- JPG-Dateien nach JPG-HQ verschieben
++ Ordner anlegen
+	+ RAW
+	+ JPQ-HQ
+- wenn DNG und JPG vorhanden
+    - DNG-Dateien nach RAW verschieben
+    - JPG-Dateien nach JPG-HQ verschieben
 - JPG-Dateien umgewandelt in Root hoch kopieren (z.B. 2000x3000px)
-- JPGs in Root in Zipfile packen
 
-- Root Ordner und Zipfile benennen (Prompt)
+- Root Ordner benennen (Prompt)
+- JPGs in Root in Zipfile (benannt nach Rootfolder) packen
+
+
+
+Refactorings:
+- use: for src_dir, dirs, files in os.walk(srcdir):
+            do s.th.

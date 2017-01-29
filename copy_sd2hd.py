@@ -1,12 +1,16 @@
-import os, time, shutil, psutil, subprocess, configparser
+# deprecated
+##################
+
+import os, time, shutil, psutil, subprocess, util
 
 import win32com.client as com
 
 
 def copy_sd2hd():
+
     MB = 1024 * 1024.0
-    camera_path = os.path.abspath(config.get("Foldersettings", "camerapath"))
-    archive_path = os.path.abspath(config.get("Foldersettings", "archivepath"))
+    camera_path = os.path.abspath(util.config.get("Foldersettings", "camerapath"))
+    archive_path = os.path.abspath(util.config.get("Foldersettings", "archivepath"))
 
     for folder in os.listdir(camera_path):
         src_path = os.path.abspath(camera_path + "\\" + folder)
@@ -28,12 +32,10 @@ def copy_sd2hd():
             print " Path already existing. Skipping ..."
         else:
             shutil.copytree(src_path, dest_path)
-            print " Copy complete, opening Destination folder"
+            print " Copy complete, opening Explorer"
             subprocess.Popen(r'explorer /select, "' + dest_path + '\\"')
 
         print "---------------------------"
         print " "
 
-config = configparser.ConfigParser()
-config.read_file(open('config.cfg'))
-copy_sd2hd()
+
