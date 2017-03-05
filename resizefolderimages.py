@@ -27,10 +27,10 @@ if __name__ == "__main__":
             f_text, f_ext = os.path.splitext(f)
             f_ext = f_ext[1:].upper()
             if f_ext in extensions:
-                print f
+                print(f)
                 image = Image.open(os.path.join(path,f))
-                print image.size
+                print(image.size)
                 width, height = image.size
                 image = image.resize(adjusted_size(width, height))
-                print image.size
+                print(image.size)
                 image.save(os.path.join(path_small,f))

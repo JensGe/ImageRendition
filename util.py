@@ -29,10 +29,10 @@ def createfolders(emptyfolder):
     emptyfolderpath = os.path.abspath(archive_path + "\\" + emptyfolder[0] + "\\" + emptyfolder[1])
     if not os.path.exists(emptyfolderpath + "\\RAW"):
         os.makedirs(emptyfolderpath + "\\RAW")
-        print emptyfolderpath + "\\RAW created."
+        print(emptyfolderpath + "\\RAW created.")
     if not os.path.exists(emptyfolderpath + "\\JPG-HQ"):
         os.makedirs(emptyfolderpath + "\\JPG-HQ")
-        print emptyfolderpath + "\\JPG-HQ created."
+        print(emptyfolderpath + "\\JPG-HQ created.")
 
 def copy_sd2hd():
 
@@ -46,23 +46,23 @@ def copy_sd2hd():
         srcfoldersize = (fso.GetFolder(src_path).Size / MB)
         destspace = psutil.disk_usage("F:\\_FOTOGRAFIE").free / MB
 
-        print "---------------------------"
-        print " Foldername:   %s" %folder
-        print " Year:         %s" %folderyear
-        print " Size:         %.2f MB" %srcfoldersize
-        print " Copying from %s to %s" %(src_path, dest_path)
+        print("---------------------------")
+        print(" Foldername:   %s" %folder)
+        print(" Year:         %s" %folderyear)
+        print(" Size:         %.2f MB" %srcfoldersize)
+        print(" Copying from %s to %s" %(src_path, dest_path))
 
         if srcfoldersize > destspace:
-            print " Not enough Space in Destination"
+            print(" Not enough Space in Destination")
         elif os.path.exists(dest_path):
-            print " Path already existing. Skipping ..."
+            print(" Path already existing. Skipping ...")
         else:
             shutil.copytree(src_path, dest_path)
-            print " Copy complete, opening Explorer"
+            print(" Copy complete, opening Explorer")
             subprocess.Popen(r'explorer /select, "' + dest_path + '\\"')
 
-        print "---------------------------"
-        print " "
+        print("---------------------------")
+        print(" ")
 
 
 

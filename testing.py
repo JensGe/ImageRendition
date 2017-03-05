@@ -21,4 +21,4 @@ def listemptyfolders():
     return emptyfolders
 
 
-print listemptyfolders()
+print(listemptyfolders())

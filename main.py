@@ -2,15 +2,15 @@ import util, copy_sd2hd
 
 
 def welcomescreen():
-    print "| Select an Option"
-    print "|  (c) Copy SD-Card to Hard Disk"
-    print "|  (f) Create Folderstructure"
-    print "|  (s) Settings"
-    print "|  (x) Exit"
+    print("| Select an Option")
+    print("|  (c) Copy SD-Card to Hard Disk")
+    print("|  (f) Create Folderstructure")
+    print("|  (s) Settings")
+    print("|  (x) Exit")
 
 
 def getselection():
-    selection = raw_input('|> ')
+    selection = input('|> ')
     return selection
 
 
@@ -19,7 +19,7 @@ def copy_sd():
 
 
 def settings():
-    print "entering settings"
+    print("entering settings")
 
 
 def create_folderstructure():
