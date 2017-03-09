@@ -1,9 +1,15 @@
 # deprecated
 ##################
 
-import os, time, shutil, psutil, subprocess, util
+import os
+import psutil
+import shutil
+import subprocess
+import time
 
 import win32com.client as com
+
+from old_lib import util
 
 
 def copy_sd2hd():

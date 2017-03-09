@@ -1,4 +1,4 @@
-import util, copy_sd2hd
+from old_lib import util
 
 
 def welcomescreen():
